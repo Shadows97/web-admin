@@ -14,9 +14,9 @@ Assure-toi d'avoir les éléments suivants installés sur ton système :
 
 Clone ce dépôt de code source dans ton répertoire local :
    ```sh
-   git clone https://github.com/utilisateur/mon-projet-angular.git
+   git clone https://github.com/Shadows97/web-admin.git
 
-   cd mon-projet-angular 
+   cd web-admin 
 
    npm install
 
