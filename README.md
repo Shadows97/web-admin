@@ -1,27 +1,34 @@
 # WebAdmin
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.0.
 
-## Development server
+Ce projet a été généré avec Angular CLI. Il s'agit d'une brève description de ce que fait ton projet et comment le lancer.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Prérequis
 
-## Code scaffolding
+Assure-toi d'avoir les éléments suivants installés sur ton système :
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- [Node.js](https://nodejs.org/) (v14.x ou supérieure recommandée)
+- [Angular CLI](https://angular.io/cli) (installé de manière globale)
 
-## Build
+## Installation
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Clone ce dépôt de code source dans ton répertoire local :
+   ```sh
+   git clone https://github.com/utilisateur/mon-projet-angular.git
 
-## Running unit tests
+   cd mon-projet-angular 
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+   npm install
 
-## Running end-to-end tests
+   
+   ```
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## Lancer le Serveur de Développement
 
-## Further help
+Exécute la commande suivante pour lancer le serveur de développement :
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+```sh
+ng serve
+
+```
+
