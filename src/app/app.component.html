@@ -90,6 +90,9 @@
         <h1 class="modal-title fs-5" id="packageModalLabel">Create Package</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
+      <div *ngIf="packageErrorMsg != ''" class="alert alert-danger m-2" role="alert">
+        {{ packageErrorMsg }}
+      </div>
       <div class="modal-body">
         <form (ngSubmit)="onSubmitPackage()" [formGroup]="packageForm">
           <div class="mb-3">
@@ -165,6 +168,9 @@
       <div class="modal-header">
         <h1 class="modal-title fs-5" id="updatePackageModalLabel">Update Package</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div *ngIf="packageErrorMsg != ''" class="alert alert-danger m-2" role="alert">
+        {{ packageErrorMsg }}
       </div>
       <div class="modal-body">
         <form (ngSubmit)="onSubmitPackageUpdate()" [formGroup]="packageUpdateForm">
@@ -253,6 +259,9 @@
         <h1 class="modal-title fs-5" id="deliveryModalLabel">Create Delivery</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
+      <div *ngIf="deliveryErrorMsg != ''" class="alert alert-danger m-2" role="alert">
+        {{ deliveryErrorMsg }}
+      </div>
       <div class="modal-body">
         <form (ngSubmit)="onSubmitDelivery()" [formGroup]="deliveryForm">
           
@@ -316,6 +325,9 @@
       <div class="modal-header">
         <h1 class="modal-title fs-5" id="updateDeliveryModalLabel">Update Delivery</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div *ngIf="deliveryErrorMsg != ''" class="alert alert-danger m-2" role="alert">
+        {{ deliveryErrorMsg }}
       </div>
       <div class="modal-body">
         <form (ngSubmit)="onSubmitDeliveryUpdate()" [formGroup]="deliveryUpdateForm">

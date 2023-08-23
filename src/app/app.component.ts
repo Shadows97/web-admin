@@ -1,6 +1,7 @@
 import {  Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { TrackerApiService } from './services/tracker-api.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-root',
@@ -11,6 +12,9 @@ export class AppComponent {
   packages: any[] = [];
   deliveries: any[] = [];
 
+  packageErrorMsg: String = "";
+  deliveryErrorMsg: String = "";
+
   packageForm!: FormGroup;
   packageUpdateForm!: FormGroup;
   deliveryForm!: FormGroup;
@@ -19,7 +23,8 @@ export class AppComponent {
   packageSelected: any = null;
   deliverySelected: any = null;
   
-  constructor(private tracket_api: TrackerApiService, private formBuilder: FormBuilder) {
+  constructor(private tracket_api: TrackerApiService, 
+    private formBuilder: FormBuilder, private toastr: ToastrService) {
    
     
   }
@@ -188,13 +193,15 @@ onSubmitPackage() {
 
     console.log(JSON.stringify(cleanedData));
 
-    this.tracket_api.createPackage(JSON.stringify(formData))
+    this.tracket_api.createPackage(JSON.stringify(cleanedData))
     .then(response => {
       console.log(response.data)
       this.getPackages()
     })
     .catch(error => {
-      console.log(error);
+      const msg: any = Object.values(error.response.data.error.errors)[0];
+      this.packageErrorMsg = error.response.data.message;
+      console.log(msg.message);
     });
   }
 }
@@ -232,7 +239,9 @@ onSubmitPackageUpdate() {
       this.getPackages();
     })
     .catch(error => {
-      console.log(error);
+      const msg: any = Object.values(error.response.data.error.errors)[0];
+      this.packageErrorMsg = error.response.data.message;
+      console.log(msg.message);
     });
   }
 }
@@ -271,7 +280,9 @@ onSubmitDelivery() {
       
     })
     .catch(error => {
-      console.log(error);
+      const msg: any = Object.values(error.response.data.error.errors)[0];
+      this.deliveryErrorMsg = error.response.data.message;
+      console.log(msg.message);
     });
    
   }
@@ -311,7 +322,9 @@ onSubmitDeliveryUpdate() {
       
     })
     .catch(error => {
-      console.log(error);
+      const msg: any = Object.values(error.response.data.error.errors)[0];
+      this.deliveryErrorMsg = error.response.data.message;
+      console.log(msg.message);
     });
    
   }
